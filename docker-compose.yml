@@ -1,0 +1,13 @@
+services:
+  hivemq:
+    image: hivemq/hivemq-ce:latest
+    container_name: hivemq
+    ports:
+      - "1883:1883"
+      - "8080:8080"
+    environment:
+      - HIVE_MQTT_PORT=1883
+      - KAFKA_BROKER_LIST=kafka:9092
+      - ZOOKEEPER_CONNECT=zookeeper:2181
+    volumes:
+      - ./hivemq/extensions:/opt/hivemq/extensions  # Đây là cấu hình volumes đúng

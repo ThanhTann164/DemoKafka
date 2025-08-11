@@ -1,0 +1,12 @@
+{
+  "name": "mqtt-source-connector",
+  "config": {
+    "connector.class": "io.lenses.connect.mqtt.MqttSourceConnector",
+    "tasks.max": "1",
+    "mqtt.server.uri": "tcp://hivemq:1883",  
+    "mqtt.topics": "iot-data, door-data, gas-data, humidity-data, smart-light-data",  
+    "kafka.topic": "mqtt-data", 
+    "value.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter"
+  }
+}
